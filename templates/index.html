@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Information Form</title>
+  <style>
+
+body {
+    background-image: url("background_pwc.png");
+    background-size: cover;
+    background-repeat: No-repeat;
+    }
+    /* Style for two-column layout */
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+    .column {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <form action="{{url_for('predict')}}" method="post">
+    <h1><b>Customer Churn Predictor Application</b></h1>
+    <h4>Curious whether the customer will churn or Not? See for yourself ! Just provide the details below.</h4>
+    <h3>Demographic Information</h3>
+    <label for="gender">Gender:</label>
+    <select name="gender" id="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select><br><br>
+    <label for="SeniorCitizen">Senior Citizen:</label>
+    <select name="SeniorCitizen" id="SeniorCitizen" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select><br><br>
+    
+    <label for="Partner">Partner:</label>
+    <select name="Partner" id="Partner" required>
+      <option value="married">Married</option>
+      <option value="single">Single</option>
+    </select><br><br>
+    
+    <label for="Dependents">Dependents:</label>
+    <select name="Dependents" id="Dependents" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select><br><br>
+    
+    <label for="tenure">Tenure:</label>
+    <input type="number" name="tenure" id="tenure" required><br><br>
+    <div class="row">
+        <div class="column">
+          
+          <h3>Services Information</h3>
+          <label for="PhoneService">Phone Service:</label>
+          <select name="PhoneService" id="PhoneService" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select><br><br>
+          
+          <label for="MultipleLines">Multiple Lines:</label>
+          <select name="MultipleLines" id="MultipleLines" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="No phone service">No Phone Service</option>
+          </select><br><br>
+          <label for="InternetService">Internet Service:</label>
+    <select name="InternetService" id="InternetService" required>
+      <option value="dsl">DSL</option>
+      <option value="fiber-optic">Fiber Optic</option>
+      <option value="No">No</option>
+    </select><br><br>
+    
+    <label for="OnlineSecurity">Online Security:</label>
+    <select name="OnlineSecurity" id="OnlineSecurity" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="No internet service">No Internet Service</option>
+    </select><br><br>
+    
+    <label for="OnlineBackup">Online Backup:</label>
+    <select name="OnlineBackup" id="OnlineBackup" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="No internet service">No Internet Service</option>
+    </select><br><br>
+    
+    <label for="DeviceProtection">Device Protection:</label>
+    <select name="DeviceProtection" id="DeviceProtection" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="No internet service">No Internet Service</option>
+    </select><br><br>
+
+    <label for="TechSupport">Tech Support:</label>
+    <select name="TechSupport" id="TechSupport" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="No internet service">No Internet Service</option>
+    </select><br><br>
+    
+    <label for="StreamingTV">Streaming TV:</label>
+    <select name="StreamingTV" id="StreamingTV" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="No internet service">No Internet Service</option>
+    </select><br><br>
+    
+    <label for="StreamingMovies">Streaming Movies:</label>
+    <select name="StreamingMovies" id="StreamingMovies" required>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="No internet service">No Internet Service</option>
+    </select><br><br>
+        </div>
+      
+        <div class="column">
+          <h3>Account Information</h3>
+          <label for="Contract">Contract Type:</label>
+          <select name="Contract" id="Contract" required>
+            <option value="month to month">Month to Month</option>
+            <option value="one-year">One Year</option>
+            <option value="two-year">Two Years</option>
+          </select><br><br>
+      
+          <label for="PaperlessBilling">Paperless Billing:</label>
+          <select name="PaperlessBilling" id="PaperlessBilling" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select><br><br>
+          <label for="PaymentMethod">Payment Method:</label>
+          <select name="PaymentMethod" id="PaymentMethod" required>
+            <option value="bank-transfer">Bank Transfer</option>
+            <option value="credit-card">Credit Card</option>
+            <option value="electronic-payment">Electronic Payment</option>
+            <option value="mailed-check">Mailed Check</option>
+          </select><br><br>
+      
+          <label for="MonthlyCharges">Monthly Charges:</label>
+          <input type="number" name="MonthlyCharges" id="MonthlyCharges" required><br><br>
+          
+          <label for="TotalCharges">Total Charges:</label>
+          <input type="number" name="TotalCharges" id="TotalCharges" required><br><br>
+      
+          <label for="numAdminTickets">Number of Admin Tickets:</label>
+          <input type="number" name="numAdminTickets" id="numAdminTickets" required><br><br>
+      
+          <label for="numTechTickets">Number of Tech Tickets:</label>
+          <input type="number" name="numTechTickets" id="numTechTickets" required><br><br>
+        </div>
+      </div>
+      
+      <br><br><br>
+      <button id="sub" type="submit"><b>Churn Prediction</b></button>
+      <br>
+
+    </form>
+
+    <br><h3>{{ prediction_text }}<h3>
+
+      
