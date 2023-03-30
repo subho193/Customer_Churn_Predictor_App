@@ -156,9 +156,9 @@ def predict():
     
     prediction=model.predict(final_input)[0]
     if prediction==0:
-        return render_template('index.html',prediction_text="Customer Will Not Churn")
+        return render_template('index.html',prediction_text="Congratulations!! This Customer is NOT going to Churn soon.")
     else:
-        return render_template('index.html',prediction_text="This Customer Will Churn. Time to announce some exciting offers.")
+        return render_template('index.html',prediction_text="Ah, oh! This customer may churn soon. Let's start offering some exciting rewards.")
     
 
 if __name__=="__main__":
